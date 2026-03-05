@@ -1,43 +1,61 @@
-# Pixel Agents
+<div align="center">
 
-A VS Code extension that turns your AI coding agents into animated pixel art characters in a virtual office.
+# Pixel Agents for Copilot
 
-Each Claude Code terminal you open spawns a character that walks around, sits at desks, and visually reflects what the agent is doing — typing when writing code, reading when searching files, waiting when it needs your attention.
+### Your GitHub Copilot agents, alive in pixel art.
 
-This is the source code for the free [Pixel Agents extension for VS Code](https://marketplace.visualstudio.com/items?itemName=pablodelucca.pixel-agents) — you can install it directly from the marketplace with the full furniture catalog included.
+A VS Code extension that transforms your AI coding sessions into an animated pixel art office — each Copilot agent becomes a character that walks, sits at desks, and visually reflects what it's doing in real time.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![VS Code](https://img.shields.io/badge/VS%20Code-1.107%2B-007ACC?logo=visualstudiocode)](https://code.visualstudio.com/)
+[![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-Powered-8957e5?logo=githubcopilot)](https://github.com/features/copilot)
 
 ![Pixel Agents screenshot](webview-ui/public/Screenshot.jpg)
 
-## Features
-
-- **One agent, one character** — every Claude Code terminal gets its own animated character
-- **Live activity tracking** — characters animate based on what the agent is actually doing (writing, reading, running commands)
-- **Office layout editor** — design your office with floors, walls, and furniture using a built-in editor
-- **Speech bubbles** — visual indicators when an agent is waiting for input or needs permission
-- **Sound notifications** — optional chime when an agent finishes its turn
-- **Sub-agent visualization** — Task tool sub-agents spawn as separate characters linked to their parent
-- **Persistent layouts** — your office design is saved and shared across VS Code windows
-- **Diverse characters** — 6 diverse characters. These are based on the amazing work of [JIK-A-4, Metro City](https://jik-a-4.itch.io/metrocity-free-topdown-character-pack).
-
-<p align="center">
+<p>
   <img src="webview-ui/public/characters.png" alt="Pixel Agents characters" width="320" height="72" style="image-rendering: pixelated;">
 </p>
 
-## Requirements
+</div>
 
-- VS Code 1.109.0 or later
-- [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) installed and configured
+---
+
+## What is Pixel Agents?
+
+Pixel Agents turns your GitHub Copilot coding sessions into something you can *see*. Every agent you launch spawns an animated pixel character in a virtual office — typing when writing code, reading when searching files, waiting when it needs your attention. Sub-agents appear as new characters near their parent, and when a task finishes, you'll know by a glance.
+
+> **Fork notice**: This project is a fork of the original [Pixel Agents](https://github.com/pablodelucca/pixel-agents) by [Pablo De Lucca](https://github.com/pablodelucca), adapted to work with **GitHub Copilot** instead of Claude Code. All credit for the original concept, pixel art engine, layout editor, and office rendering goes to the original author. This fork focuses on integrating the beautiful visualization with the Copilot ecosystem.
+
+---
+
+## Features
+
+| Feature | Description |
+|---------|-------------|
+| **One agent, one character** | Every Copilot agent session gets its own animated character |
+| **Live activity tracking** | Characters animate based on real tool usage — writing, reading, running commands, searching |
+| **Sub-agent visualization** | Sub-agents spawn as separate characters linked to their parent |
+| **Office layout editor** | Design your office with floors, walls, furniture, and full HSB color control |
+| **Speech bubbles** | Visual indicators when an agent is waiting for input or needs permission |
+| **Sound notifications** | Optional chime when an agent finishes its turn |
+| **Persistent layouts** | Your office design is saved and shared across VS Code windows |
+| **Diverse characters** | 6 unique character sprites with automatic palette diversification |
+| **Export & import** | Share your office layouts as JSON files |
+
+---
 
 ## Getting Started
 
-If you just want to use Pixel Agents, the easiest way is to download the [VS Code extension](https://marketplace.visualstudio.com/items?itemName=pablodelucca.pixel-agents). If you want to play with the code, develop, or contribute, then:
+### Requirements
+
+- **VS Code** 1.107.0 or later
+- **GitHub Copilot** subscription (Free, Pro, or Enterprise)
 
 ### Install from source
 
 ```bash
-git clone https://github.com/pablodelucca/pixel-agents.git
-cd pixel-agents
+git clone https://github.com/eumakerdev/pixel-agents-copilot.git
+cd pixel-agents-copilot
 npm install
 cd webview-ui && npm install && cd ..
 npm run build
@@ -47,87 +65,111 @@ Then press **F5** in VS Code to launch the Extension Development Host.
 
 ### Usage
 
-1. Open the **Pixel Agents** panel (it appears in the bottom panel area alongside your terminal)
-2. Click **+ Agent** to spawn a new Claude Code terminal and its character
-3. Start coding with Claude — watch the character react in real time
+1. Open the **Pixel Agents** panel (bottom panel area, alongside your terminal)
+2. Click **+ Agent** to launch a new Copilot agent session
+3. Start coding — watch the character react in real time as tools are invoked
 4. Click a character to select it, then click a seat to reassign it
-5. Click **Layout** to open the office editor and customize your space
+5. Click **Layout** to customize your office
+
+---
 
 ## Layout Editor
 
-The built-in editor lets you design your office:
+The built-in editor lets you design your pixel art office:
 
-- **Floor** — Full HSB color control
-- **Walls** — Auto-tiling walls with color customization
+- **Floor painting** — 7 patterns with full HSB color control
+- **Wall painting** — Auto-tiling walls with color customization
+- **Furniture** — Place, rotate (R), toggle state (T), drag to move, color per item
 - **Tools** — Select, paint, erase, place, eyedropper, pick
 - **Undo/Redo** — 50 levels with Ctrl+Z / Ctrl+Y
-- **Export/Import** — Share layouts as JSON files via the Settings modal
-
-The grid is expandable up to 64×64 tiles. Click the ghost border outside the current grid to grow it.
+- **Expandable grid** — Up to 64×64 tiles; click the ghost border to grow
 
 ### Office Assets
 
-The office tileset used in this project and available via the extension is **[Office Interior Tileset (16x16)](https://donarg.itch.io/officetileset)** by **Donarg**, available on itch.io for **$2 USD**.
-
-This is the only part of the project that is not freely available. The tileset is not included in this repository due to its license. To use Pixel Agents locally with the full set of office furniture and decorations, purchase the tileset and run the asset import pipeline:
+The office tileset is **[Office Interior Tileset (16x16)](https://donarg.itch.io/officetileset)** by **Donarg** on itch.io ($2 USD). It is not included in this repository due to its license. To use the full furniture catalog locally:
 
 ```bash
 npm run import-tileset
 ```
 
-Fair warning: the import pipeline is not exactly straightforward — the out-of-the-box tileset assets aren't the easiest to work with, and while I've done my best to make the process as smooth as possible, it may require some manual tweaking. If you have experience creating pixel art office assets and would like to contribute freely usable tilesets for the community, that would be hugely appreciated.
+The extension works without the tileset — you get the default characters and basic layout. The full catalog requires the imported assets.
 
-The extension will still work without the tileset — you'll get the default characters and basic layout, but the full furniture catalog requires the imported assets.
+Character sprites are based on the amazing work of **[JIK-A-4, Metro City](https://jik-a-4.itch.io/metrocity-free-topdown-character-pack)**.
+
+---
 
 ## How It Works
 
-Pixel Agents watches Claude Code's JSONL transcript files to track what each agent is doing. When an agent uses a tool (like writing a file or running a command), the extension detects it and updates the character's animation accordingly. No modifications to Claude Code are needed — it's purely observational.
+```
+┌─────────────┐     ┌──────────────────┐     ┌──────────────────┐
+│  Copilot     │────▶│  Extension Host   │────▶│  Webview (React) │
+│  Agent       │     │  Event tracking   │     │  Pixel art office│
+│  Session     │     │  Tool detection   │     │  Canvas rendering│
+└─────────────┘     └──────────────────┘     └──────────────────┘
+```
 
-The webview runs a lightweight game loop with canvas rendering, BFS pathfinding, and a character state machine (idle → walk → type/read). Everything is pixel-perfect at integer zoom levels.
+The extension monitors Copilot agent sessions and detects tool invocations (file reads, edits, terminal commands, searches, sub-agent spawns). Each event maps to a character animation — typing for writes, reading for searches, idle wandering between tasks. The webview runs a lightweight game loop with canvas rendering, BFS pathfinding, and a character state machine. Everything is pixel-perfect at integer zoom levels.
+
+---
 
 ## Tech Stack
 
-- **Extension**: TypeScript, VS Code Webview API, esbuild
-- **Webview**: React 19, TypeScript, Vite, Canvas 2D
+| Layer | Technologies |
+|-------|-------------|
+| **Extension** | TypeScript, VS Code Webview API, esbuild |
+| **Webview** | React 19, TypeScript, Vite, Canvas 2D |
+| **Rendering** | Custom pixel engine, sprite caching, z-sorted entities |
+| **Pathfinding** | BFS on tile map with per-character walkability |
 
-## Known Limitations
-
-- **Agent-terminal sync** — the way agents are connected to Claude Code terminal instances is not super robust and sometimes desyncs, especially when terminals are rapidly opened/closed or restored across sessions.
-- **Heuristic-based status detection** — Claude Code's JSONL transcript format does not provide clear signals for when an agent is waiting for user input or when it has finished its turn. The current detection is based on heuristics (idle timers, turn-duration events) and often misfires — agents may briefly show the wrong status or miss transitions.
-- **Windows-only testing** — the extension has only been tested on Windows 11. It may work on macOS or Linux, but there could be unexpected issues with file watching, paths, or terminal behavior on those platforms.
+---
 
 ## Roadmap
 
-There are several areas where contributions would be very welcome:
+- **GitHub Copilot integration** — Full migration from Claude Code to Copilot Chat API / Agent mode
+- **Custom agent definitions** — `.agent.md` files with custom skills, system prompts, names, and skins
+- **Desks as directories** — Click a desk to assign a working directory to an agent
+- **Agent teams** — Visualize multi-agent coordination with Copilot's sub-agent system
+- **Git worktree support** — Agents in different worktrees to avoid file conflicts
+- **Community assets** — Freely usable pixel art tilesets and characters
+- **Cross-platform testing** — macOS and Linux support improvements
 
-- **Improve agent-terminal reliability** — more robust connection and sync between characters and Claude Code instances
-- **Better status detection** — find or propose clearer signals for agent state transitions (waiting, done, permission needed)
-- **Community assets** — freely usable pixel art tilesets or characters that anyone can use without purchasing third-party assets
-- **Agent creation and definition** — define agents with custom skills, system prompts, names, and skins before launching them
-- **Desks as directories** — click on a desk to select a working directory, drag and drop agents or click-to-assign to move them to specific desks/projects
-- **Claude Code agent teams** — native support for [agent teams](https://code.claude.com/docs/en/agent-teams), visualizing multi-agent coordination and communication
-- **Git worktree support** — agents working in different worktrees to avoid conflict from parallel work on the same files
-- **Support for other agentic frameworks** — [OpenCode](https://github.com/nichochar/opencode), or really any kind of agentic experiment you'd want to run inside a pixel art interface (see [simile.ai](https://simile.ai/) for inspiration)
+---
 
-If any of these interest you, feel free to open an issue or submit a PR.
+## Contributing
 
-## Contributions
-
-See [CONTRIBUTORS.md](CONTRIBUTORS.md) for instructions on how to contribute to this project.
+See [CONTRIBUTORS.md](CONTRIBUTORS.md) for setup instructions and contribution guidelines.
 
 Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before participating.
 
-## Supporting the Project
+---
 
-If you find Pixel Agents useful, consider supporting its development:
+## Credits & Acknowledgments
+
+This project exists thanks to the work of many people:
+
+| | |
+|---|---|
+| **Original project** | [Pixel Agents](https://github.com/pablodelucca/pixel-agents) by [Pablo De Lucca](https://github.com/pablodelucca) — the entire pixel art engine, office renderer, layout editor, character system, sprite pipeline, and the original vision of coding agents as animated characters. |
+| **This fork** | [Pixel Agents for Copilot](https://github.com/eumakerdev/pixel-agents-copilot) by [eumakerdev](https://github.com/eumakerdev) — adaptation to integrate with GitHub Copilot's ecosystem. |
+| **Character sprites** | [JIK-A-4, Metro City](https://jik-a-4.itch.io/metrocity-free-topdown-character-pack) — the base character pack. |
+| **Office tileset** | [Donarg](https://donarg.itch.io/officetileset) — Office Interior Tileset (16x16). |
+| **Original contributors** | [@johnnnzhub](https://github.com/johnnnzhub), [@pghoya2956](https://github.com/pghoya2956) — macOS fixes, multi-root workspace support. |
+
+### Supporting the original author
+
+If you enjoy Pixel Agents, consider supporting **Pablo De Lucca**, who created the original project:
 
 <a href="https://github.com/sponsors/pablodelucca">
-  <img src="https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?logo=github" alt="GitHub Sponsors">
+  <img src="https://img.shields.io/badge/Sponsor_Pablo-GitHub-ea4aaa?logo=github" alt="GitHub Sponsors">
 </a>
 <a href="https://ko-fi.com/pablodelucca">
-  <img src="https://img.shields.io/badge/Support-Ko--fi-ff5e5b?logo=ko-fi" alt="Ko-fi">
+  <img src="https://img.shields.io/badge/Support_Pablo-Ko--fi-ff5e5b?logo=ko-fi" alt="Ko-fi">
 </a>
+
+---
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+Original work copyright (c) 2026 Pablo De Lucca. Fork modifications by eumakerdev.

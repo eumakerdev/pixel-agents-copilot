@@ -1,6 +1,6 @@
-# Contributing to Pixel Agents
+# Contributing to Pixel Agents for Copilot
 
-Thanks for your interest in contributing to Pixel Agents! All contributions are welcome — features, bug fixes, documentation improvements, refactors, and more.
+Thanks for your interest in contributing! This is a fork of [Pixel Agents](https://github.com/pablodelucca/pixel-agents) by [Pablo De Lucca](https://github.com/pablodelucca), adapted for GitHub Copilot. All contributions are welcome — features, bug fixes, documentation improvements, refactors, and more.
 
 This project is licensed under the [MIT License](LICENSE), so your contributions will be too. No CLA or DCO is required.
 
@@ -9,13 +9,14 @@ This project is licensed under the [MIT License](LICENSE), so your contributions
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) (LTS recommended)
-- [VS Code](https://code.visualstudio.com/) (v1.109.0 or later)
+- [VS Code](https://code.visualstudio.com/) (v1.107.0 or later)
+- [GitHub Copilot](https://github.com/features/copilot) subscription
 
 ### Setup
 
 ```bash
-git clone https://github.com/pablodelucca/pixel-agents.git
-cd pixel-agents
+git clone https://github.com/eumakerdev/pixel-agents-copilot.git
+cd pixel-agents-copilot
 npm install
 cd webview-ui && npm install && cd ..
 npm run build
@@ -37,14 +38,15 @@ This starts parallel watchers for both the extension backend (esbuild) and TypeS
 
 ### Project Structure
 
-| Directory | Description |
-|---|---|
-| `src/` | Extension backend — Node.js, VS Code API |
+| Directory     | Description                                         |
+| ------------- | --------------------------------------------------- |
+| `src/`        | Extension backend — Node.js, VS Code API            |
 | `webview-ui/` | React + TypeScript frontend (separate Vite project) |
-| `scripts/` | Asset extraction and generation tooling |
-| `assets/` | Bundled sprites, catalog, and default layout |
+| `scripts/`    | Asset extraction and generation tooling             |
+| `assets/`     | Bundled sprites, catalog, and default layout        |
 
 ## Code Guidelines
+
 ### Constants
 
 **No unused locals or parameters** (`noUnusedLocals` and `noUnusedParameters` are enabled): All magic numbers and strings are centralized — don't add inline constants to source files:
@@ -78,7 +80,7 @@ The project uses a pixel art aesthetic. All overlays should use:
 
 ## Reporting Bugs
 
-[Open an issue](https://github.com/pablodelucca/pixel-agents/issues) with:
+[Open an issue](https://github.com/eumakerdev/pixel-agents-copilot/issues) with:
 
 - What you expected to happen
 - What actually happened
@@ -87,7 +89,7 @@ The project uses a pixel art aesthetic. All overlays should use:
 
 ## Feature Requests
 
-Have an idea? [Open an issue](https://github.com/pablodelucca/pixel-agents/issues) to discuss it before building. This helps avoid duplicate work and ensures the feature fits the project's direction.
+Have an idea? [Open an issue](https://github.com/eumakerdev/pixel-agents-copilot/issues) to discuss it before building. This helps avoid duplicate work and ensures the feature fits the project's direction.
 
 ## Code of Conduct
 

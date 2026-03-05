@@ -2,13 +2,22 @@
 export const STATUS_TO_TOOL: Record<string, string> = {
   'Reading': 'Read',
   'Searching': 'Grep',
-  'Globbing': 'Glob',
+  'Finding': 'Grep',
+  'Listing': 'Read',
   'Fetching': 'WebFetch',
-  'Searching web': 'WebSearch',
   'Writing': 'Write',
   'Editing': 'Edit',
   'Running': 'Bash',
-  'Task': 'Task',
+  'Subtask': 'Task',
+  'Checking': 'Read',
+  'Managing': 'Read',
+  'Loading': 'Read',
+  'Rendering': 'Write',
+  'Waiting': 'Read',
+  'GitHub': 'Read',
+  'Pylance': 'Read',
+  'VS Code': 'Read',
+  'Using': 'Bash',
 }
 
 export function extractToolName(status: string): string | null {

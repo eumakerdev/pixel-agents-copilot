@@ -1,24 +1,31 @@
 {
   "name": "pixel-agents",
   "displayName": "Pixel Agents",
-  "description": "Pixel art office where your Claude Code agents come to life as animated characters",
+  "description": "Pixel art office where your GitHub Copilot agents come to life as animated characters",
   "version": "1.0.2",
   "publisher": "pablodelucca",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pablodelucca/pixel-agents"
+    "url": "https://github.com/eumakerdev/pixel-agents-copilot"
   },
   "icon": "icon.png",
   "license": "MIT",
   "engines": {
     "vscode": "^1.107.0"
   },
-  "categories": [
-    "Other"
-  ],
+  "categories": ["Other"],
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
+    "chatParticipants": [
+      {
+        "id": "pixel-agents.agent",
+        "name": "pixel-agents",
+        "fullName": "Pixel Agents",
+        "description": "Copilot agent with pixel art visualization",
+        "isSticky": true
+      }
+    ],
     "commands": [
       {
         "command": "pixel-agents.showPanel",
@@ -62,7 +69,6 @@
     "import-tileset": "tsx scripts/import-tileset-cli.ts"
   },
   "devDependencies": {
-    "@anthropic-ai/sdk": "^0.74.0",
     "@types/node": "22.x",
     "@types/pngjs": "^6.0.5",
     "@types/vscode": "^1.107.0",

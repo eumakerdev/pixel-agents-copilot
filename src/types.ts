@@ -3,10 +3,7 @@ import type * as vscode from 'vscode';
 export interface AgentState {
 	id: number;
 	terminalRef: vscode.Terminal;
-	projectDir: string;
-	jsonlFile: string;
-	fileOffset: number;
-	lineBuffer: string;
+	chatSessionUri?: string;
 	activeToolIds: Set<string>;
 	activeToolStatuses: Map<string, string>;
 	activeToolNames: Map<string, string>;
@@ -22,8 +19,7 @@ export interface AgentState {
 export interface PersistedAgent {
 	id: number;
 	terminalName: string;
-	jsonlFile: string;
-	projectDir: string;
+	chatSessionUri?: string;
 	/** Workspace folder name (only set for multi-root workspaces) */
 	folderName?: string;
 }

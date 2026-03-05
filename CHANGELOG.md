@@ -1,5 +1,36 @@
 # Changelog
 
+## v2.0.0 — Pixel Agents for Copilot
+
+> 🔀 This version marks the fork from the original [Pixel Agents](https://github.com/pablodelucca/pixel-agents) by [Pablo De Lucca](https://github.com/pablodelucca).
+
+### Changed
+
+- **GitHub Copilot integration** — Migrating from Claude Code CLI + JSONL file watching to GitHub Copilot Chat API and Agent mode
+- **Tool mapping** — All tool activity tracking now maps to Copilot's tool names (`read_file`, `replace_string_in_file`, `run_in_terminal`, `runSubagent`, etc.)
+- **Session management** — Agent sessions use VS Code Chat API instead of terminal-based JSONL monitoring
+- **Rebranded** — All references updated from "Claude Code" to "Copilot Agent"
+
+### Removed
+
+- Claude Code CLI dependency
+- JSONL transcript file monitoring (`fileWatcher.ts`, `transcriptParser.ts`)
+- `~/.claude/projects/` path handling
+- `@anthropic-ai/sdk` dev dependency
+
+### Preserved
+
+- Full pixel art office rendering engine (unchanged)
+- Layout editor with all tools, undo/redo, export/import
+- Character animation system (FSM, sprites, pathfinding)
+- Speech bubbles, sound notifications, sub-agent visualization
+- Persistent layouts across windows
+- All 6 character palettes with hue shift diversification
+
+---
+
+## Previous Releases (original project)
+
 ## v1.0.2
 
 ### Bug Fixes
